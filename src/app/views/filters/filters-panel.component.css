@@ -1,0 +1,68 @@
+:host {
+  position: fixed;
+  top: 45px;
+  right: 0;
+  width: 20%;
+  background-color: white;
+}
+
+:host form {
+  position: relative;
+  height: 0;
+  visibility: collapse;
+  opacity: 0;
+  padding: 10px;
+  margin-right: 30px;
+  color: #231F20;
+  font-size: 0.9em;
+  transition: opacity 1s, visibility 1s;
+}
+
+
+:host > .visible {
+  height: 100%;
+  visibility: visible;
+  opacity: 1;
+}
+
+:host fieldset {
+  margin-bottom: 10px;
+  border: 1px solid #BBBDC0;
+  border-radius: 4px;
+}
+
+:host fieldset > legend {
+  color: #6D6E71;
+  font-size: 0.8em;
+}
+
+:host select:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+:host h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: 1.7em;
+}
+
+:host small {
+  font-size: medium;
+}
+
+:host select {
+  width: 100%;
+}
+
+@media only screen and (max-height: 780px) {
+  :host form {
+    font-size: 0.75em;
+  }
+}
+
+@media only screen and (max-height: 680px) {
+  :host form {
+    font-size: 0.6em;
+  }
+}

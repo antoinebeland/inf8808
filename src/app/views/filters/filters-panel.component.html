@@ -1,0 +1,114 @@
+<form [class.visible]="visible">
+  <h1>{{ accidentsCount | numberFormatting }} <small>accident<span *ngIf="accidentsCount > 1">s</span></small></h1>
+  <fieldset>
+    <legend>Entités impliquées</legend>
+
+    <input type="checkbox" name="bus-checkbox" id="bus-checkbox"
+           [(ngModel)]="filters.entities[1]" (ngModelChange)="onValueChanged()">
+    <label for="bus-checkbox">Autobus</label><br>
+
+    <input type="checkbox" name="car-checkbox" id="car-checkbox"
+           [(ngModel)]="filters.entities[2]" (ngModelChange)="onValueChanged()">
+    <label for="car-checkbox">Automobile</label><br>
+
+    <input type="checkbox" name="truck-checkbox" id="truck-checkbox"
+           [(ngModel)]="filters.entities[8]" (ngModelChange)="onValueChanged()">
+    <label for="truck-checkbox">Camion</label><br>
+
+    <input type="checkbox" name="motorbike-checkbox" id="motorbike-checkbox"
+           [(ngModel)]="filters.entities[4]" (ngModelChange)="onValueChanged()">
+    <label for="motorbike-checkbox">Moto</label><br>
+
+    <input type="checkbox" name="pedestrian-checkbox" id="pedestrian-checkbox"
+           [(ngModel)]="filters.entities[5]" (ngModelChange)="onValueChanged()">
+    <label for="pedestrian-checkbox">Piéton</label><br>
+
+    <input type="checkbox" name="taxi-checkbox" id="taxi-checkbox"
+           [(ngModel)]="filters.entities[7]" (ngModelChange)="onValueChanged()">
+    <label for="taxi-checkbox">Taxi</label><br>
+
+    <input type="checkbox" name="emergency-checkbox" id="emergency-checkbox"
+           [(ngModel)]="filters.entities[3]" (ngModelChange)="onValueChanged()">
+    <label for="emergency-checkbox">Véhicule d'urgence</label><br>
+
+    <input type="checkbox" name="rv-checkbox" id="rv-checkbox"
+           [(ngModel)]="filters.entities[6]" (ngModelChange)="onValueChanged()">
+    <label for="rv-checkbox">Véhicule récréatif</label><br>
+
+    <input type="checkbox" name="bicycle-checkbox" id="bicycle-checkbox"
+           [(ngModel)]="filters.entities[0]" (ngModelChange)="onValueChanged()">
+    <label for="bicycle-checkbox">Vélo</label><br>
+
+    <input type="checkbox" name="others-checkbox" id="others-checkbox"
+           [(ngModel)]="filters.entities[9]" (ngModelChange)="onValueChanged()">
+    <label for="others-checkbox">Autres</label><br>
+  </fieldset>
+  <fieldset>
+    <legend>Critères</legend>
+
+    <label for="type-choices">Genre</label>
+    <select name="type-choices" id="type-choices" [(ngModel)]="filters.criteria.type" (ngModelChange)="onValueChanged()">
+      <option value="-1">Tous</option>
+      <option value="4">Collision avec animaux</option>
+      <option value="2">Collision avec cycliste</option>
+      <option value="5">Collision avec objet fixe</option>
+      <option value="1">Collision avec piéton</option>
+      <option value="3">Collision avec train</option>
+      <option value="0">Collision avec véhicule routier</option>
+      <option value="6">Sans collision</option>
+      <option value="7">Autres</option>
+    </select><br>
+
+    <label for="gravity-choices">Gravité</label>
+    <select name="gravity-choices" id="gravity-choices" [(ngModel)]="filters.criteria.gravity" (ngModelChange)="onValueChanged()">
+      <option value="-1">Tous</option>
+      <option value="0">Dommages matériels seulement</option>
+      <option value="1">Léger</option>
+      <option value="2">Grave</option>
+      <option value="3">Mortel</option>
+    </select><br>
+
+    <label for="weather-choices">Météo</label>
+    <select name="weather-choices" id="weather-choices" [(ngModel)]="filters.criteria.weather" (ngModelChange)="onValueChanged()">
+      <option value="-1">Tous</option>
+      <option value="15">Averse (pluie forte)</option>
+      <option value="13">Brouillard</option>
+      <option value="11">Clair</option>
+      <option value="17">Neige / grêle</option>
+      <option value="12">Nuageux</option>
+      <option value="14">Pluie / bruine</option>
+      <option value="18">Poudrerie / tempête de neige</option>
+      <option value="16">Vent fort</option>
+      <option value="19">Verglas</option>
+      <option value="99">Autres</option>
+    </select><br>
+
+    <label for="zone-choices">Secteur</label>
+    <select name="zone-choices" id="zone-choices" [(ngModel)]="filters.criteria.zone" (ngModelChange)="onValueChanged()">
+      <option value="-1">Tous</option>
+      <option value="1">Scolaire</option>
+      <option value="2">Résidentiel</option>
+      <option value="3">Affaires / commercial</option>
+      <option value="4">Industriel / manufacturier</option>
+      <option value="5">Rural</option>
+      <option value="6">Forestier</option>
+      <option value="7">Récréatif / parc / camping</option>
+      <option value="9">Autres</option>
+    </select>
+  </fieldset>
+  <fieldset>
+    <legend>Localisation</legend>
+
+    <label for="region-choices">Région</label>
+    <select name="region-choices" id="region-choices" [(ngModel)]="filters.location.region" (ngModelChange)="onValueChanged()">
+      <option value="-1">Toutes</option>
+      <option *ngFor="let region of regionsListFiltered" [value]="region.code">{{ region.name }}</option>
+    </select><br>
+
+    <label for="mrc-choices">MRC</label>
+    <select name="mrc-choices" id="mrc-choices" [(ngModel)]="filters.location.mrc" (ngModelChange)="onValueChanged()">
+      <option value="-1">Toutes</option>
+      <option *ngFor="let item of mrcListFiltered" [value]="item.mrcCode">{{ item.mrc }}</option>
+    </select>
+  </fieldset>
+</form>

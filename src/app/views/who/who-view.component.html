@@ -1,0 +1,17 @@
+<article class="reduced">
+  <div class="article-margin">
+    <h1>Qui ?</h1>
+    <p class="justify">
+      La majorité des accidents impliquent des automobilistes. En effet, cela représente environ 84&nbsp;% des accidents sur la route.
+    </p>
+    <div class="graphics-wrapper">
+      <imagegrid
+         *ngIf="entitiesAccidentDataset && !isDatasetEmpty"
+        [dataset]="entitiesAccidentDataset">
+      </imagegrid>
+      <h2 *ngIf="accidentsCount == 0">
+        Aucun accident trouvé
+      </h2>
+    </div>
+  </div>
+</article>

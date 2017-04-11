@@ -1,0 +1,48 @@
+.map-wrapper {
+  position: absolute;
+  top: 2px;
+  right: 1px;
+  bottom: 0;
+  left: 1px;
+}
+
+:host .toggle-buttons {
+  position: absolute;
+  display: flex;
+  box-sizing: border-box;
+  width: 400px;
+  height: 35px;
+  color: #231F20;
+  background-color: #F1F1F2;
+  border: 1px solid #404041;
+  border-radius: 4px;
+  font-size: 0.85em;
+  cursor: default;
+  line-height: 30px;
+  flex-wrap: wrap;
+  z-index: 10;
+}
+
+:host .buttons-ra {
+  bottom: 10px;
+  right: 10px;
+}
+
+:host .buttons-mrc {
+  bottom: 10px;
+  left: 10px;
+}
+
+:host .toggle-buttons > .toggle-button {
+  flex: 1;
+  width: 100%;
+}
+
+:host .toggle-buttons > .toggle-button:not(:last-child) {
+  border-right: 1px solid #404041;
+}
+
+:host .toggle-buttons > .toggle-button.active {
+  color: #FFFFFF;
+  background-color: #6D6E70;
+}

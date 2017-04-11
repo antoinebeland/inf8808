@@ -1,0 +1,9 @@
+:host .graphics-wrapper h2 {
+  position: absolute;
+  top: 30%;
+  right: 0;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,29 @@
+<article class="reduced">
+  <div class="article-margin">
+    <h1>Quand ?</h1>
+    <p class="justify">
+      Une majorité d'accidents sont survenus le vendredi en 2015. Également, la plupart des accidents se sont produits
+      durant les mois de janvier et de février.
+    </p>
+      <div class="graphics-wrapper">
+        <tabs>
+          <tab tabTitle="Vue générale">
+            <div class="container">
+              <div class="item">
+                <barchart *ngIf="barChartMonthConfig" [config]="barChartMonthConfig"></barchart>
+              </div>
+              <div class="item">
+                <barchart *ngIf="barChartDaysOfTheWeekConfig" [config]="barChartDaysOfTheWeekConfig"></barchart>
+              </div>
+            </div>
+          </tab>
+          <tab tabTitle="Vue par jours">
+            <heatmapday *ngIf="dailyAccidentDataset" [dataset]="dailyAccidentDataset"></heatmapday>
+          </tab>
+          <tab tabTitle="Vue par heures">
+            <heatmaphour *ngIf="hourlyAccidentDataset" [dataset]="hourlyAccidentDataset"></heatmaphour>
+          </tab>
+        </tabs>
+      </div>
+  </div>
+</article>

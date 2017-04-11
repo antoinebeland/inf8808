@@ -1,0 +1,29 @@
+<article class="reduced">
+  <div class="article-margin">
+    <h1>Où ?</h1>
+    <p class="justify">
+      La plupart des accidents se sont produits dans la grande région de Montréal. En effet, cette région compte 17&nbsp;596 accidents pour l’année 2015.
+    </p>
+
+    <div class="graphics-wrapper">
+      <tabs>
+        <tab tabTitle="Carte des MRC">
+          <div class="map-wrapper">
+            <geomap *ngIf='mrcJson && geoMapConfig' [json]="mrcJson" [config]="geoMapConfig" searchText="Rechercher une MRC..."></geomap>
+            <div class="toggle-buttons buttons-mrc">
+              <div class="toggle-button" [class.active]="mrcView == 'absolute'" (click)="setMRCActiveView('absolute')">Accidents totals</div>
+              <div class="toggle-button" [class.active]="mrcView == 'relative'" (click)="setMRCActiveView('relative')">Accidents / 10 000 habitants</div>
+            </div>
+          </div>
+        </tab>
+        <tab tabTitle="Régions administratives">
+          <horizontal-barchart *ngIf="barChartConfig" [config]="barChartConfig"></horizontal-barchart>
+          <div class="toggle-buttons buttons-ra">
+            <div class="toggle-button" [class.active]="view == 'absolute'" (click)="setRAActiveView('absolute')">Accidents totals</div>
+            <div class="toggle-button" [class.active]="view == 'relative'" (click)="setRAActiveView('relative')">Accidents / 10 000 habitants</div>
+          </div>
+        </tab>
+      </tabs>
+    </div>
+  </div>
+</article>

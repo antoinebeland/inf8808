@@ -1,0 +1,13 @@
+:host {
+  text-align: center;
+}
+
+#accident {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  height: 300px;
+}
+
+p:not(.reference) {
+  font-size: 1.6em;
+}

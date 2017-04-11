@@ -1,0 +1,7 @@
+<div id="container">
+  <div class="auto-complete-wrapper">
+    <input auto-complete id='search-bar' placeholder='{{ searchText }}' [source]="mrcList" min-chars="1"
+           no-match-found-text="Aucune entrée trouvée" max-num-list="10" [(ngModel)]="searchName" (ngModelChange)="searchNameChanged()"/>
+  </div>
+  <div #map class='map'></div>
+</div>
