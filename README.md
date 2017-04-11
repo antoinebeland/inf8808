@@ -5,7 +5,7 @@ est disponible sur mon [site web personnel](http://www.antoinebeland.com/inf8808
 
 ## Prérequis
 Avant de pouvoir être en mesure d'exécuter le projet, vous devez installer [Node.js](https://nodejs.org/en/). 
-Une fois Node.js installé, vous devez la taper la commande suivante dans un terminal.
+Une fois Node.js installé, vous devez taper la commande suivante dans un terminal.
 
 ```
 npm install -g @angular/cli
