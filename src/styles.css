@@ -20,14 +20,16 @@ html {
 }
 
 .loading-panel {
+  position: fixed;
+  top: 50%;
   width: 100%;
-  margin-top: 100px;
+  transform: translateY(-50%);
+  line-height: 0;
   text-align: center;
 }
 
 .loading-panel > span {
-  position: relative;
-  top: -50px;
+  margin-top: -40px;
 }
 
 /** Style de base **/

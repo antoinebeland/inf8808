@@ -111,7 +111,7 @@ export class GeoMapComponent implements OnInit, OnChanges {
         'height': '100%'
       });
 
-    let map = this.linkDivToLeaflet('http://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}');
+    let map = this.linkDivToLeaflet('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}');
     let [svg, g] = GeoMapComponent.linkD3toLeaflet(map);
 
     let colors = _.tail(colorbrewer.Reds[9]);
